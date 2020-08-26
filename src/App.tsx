@@ -1,26 +1,22 @@
 import React from 'react';
 import './App.css';
 
-import { Switch, Route, Redirect } from 'react-router-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
 
-import LoginComponent from "./components/pages/login/login";
-import HomePageComponent from "./components/pages/homepage/homepage";
+import {createMuiTheme, MuiThemeProvider} from "@material-ui/core";
+import {theme} from "./utils/theme";
+import createRoutes from "./routes/routes";
 
 function App() {
-  return (
-    <div className="app-container">
-      <header className="App-header">
-        <div className="page-container" >
-          <Switch>
-
-              <Route exact path = "/" render = { () => <LoginComponent/> }/>
-
-              <Route exact path = '/home' render = { () => <HomePageComponent/>}/>
-          </Switch>
-        </div>
-      </header>
-    </div>
-  );
+    return (
+        <React.StrictMode>
+            <MuiThemeProvider theme={createMuiTheme(theme)}>
+                <Router>
+                    {createRoutes()}
+                </Router>
+            </MuiThemeProvider>
+        </React.StrictMode>
+    );
 }
 
 export default App;
