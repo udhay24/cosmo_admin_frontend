@@ -1,10 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import * as serviceWorker from './utils/serviceWorker';
-import {createMuiTheme, MuiThemeProvider} from "@material-ui/core";
-import {theme} from "./utils/theme";
-import {BrowserRouter as Router} from 'react-router-dom';
 import App from "./App";
 
 ReactDOM.render(

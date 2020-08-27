@@ -7,14 +7,14 @@ import {
     Route,
     Redirect
 } from 'react-router-dom'
-import LoginComponent from "../components/pages/login/login";
 import HomePageComponent from "../components/pages/homepage/homepage";
+import LogInComponent from "../components/pages/login/login";
 
 export default function createRoutes() {
     return (
         <Switch>
             <Route exact path={LOGIN_PATH}>
-                <LoginComponent/>
+                <LogInComponent/>
             </Route>
 
             <Route exact path={HOME_SCREEN_PATH}>
